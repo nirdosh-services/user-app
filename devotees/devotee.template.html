@@ -1,0 +1,16 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-2">
+            Search : <input ng-model="$ctrl.query">
+        </div>
+    </div>
+    <div class="col-md-10">
+        <!--Body content-->
+        <ul class="phones">
+            <li ng-repeat="devotee in $ctrl.devotees | filter: $ctrl.query">
+                <span>{{devotee.name}}</span>
+                <p>{{devotee.snippet}}</p>
+            </li>
+        </ul>
+    </div>
+</div>
