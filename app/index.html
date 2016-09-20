@@ -5,19 +5,19 @@
     <title>My HTML File</title>
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
     <script src="bower_components/angular/angular.js"></script>
-    <script src="app.js"></script>
-    <script src="devotees/devotee.module.js"></script>
+    <script src="bower_components/angular-route/angular-route.js"></script>
+    <script src="app.module.js"></script>
+    <script src="app.config.js"></script>
+    <script src="devotees/devotees.module.js"></script>
+    <script src="devotee/devotee.module.js"></script>
     <script src="nav-bar/nav-bar.module.js"></script>
-    <script src="devotees/devotee.component.js"></script>
+    <script src="devotees/devotees.component.js"></script>
+    <script src="devotee/devotee.component.js"></script>
     <script src="nav-bar/nav-bar.component.js"></script>
   </head>
   <body>
-    <div class="container">
-      <nav-bar></nav-bar>
-    </div>
-    <div class="container">
-  	  <devotee-list></devotee-list>
-    </div>
+    <nav-bar></nav-bar>
+   <div ng-view></div>
   <script src="bower_components/jquery/dist/jquery.min.js"></script>
   <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
   </body>
