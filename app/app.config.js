@@ -10,6 +10,9 @@ config(['$locationProvider', '$routeProvider',
             .when('/devotee/:id', {
             template: '<devotee></devotee>'
         })
-            .otherwise('/devotees');
+            .when('/manager',{
+                template: '<manager></manager>'
+            })
+            .otherwise('/manager');
     }
 ]);
