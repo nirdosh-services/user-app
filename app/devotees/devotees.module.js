@@ -1,1 +1,1 @@
-angular.module('devotees', ['ngRoute'])
+angular.module('devotees', ['ngRoute', 'ngResource'])
