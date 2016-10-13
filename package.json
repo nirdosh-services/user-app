@@ -15,6 +15,9 @@
     "karma-jasmine": "^0.3.8",
     "protractor": "^3.2.2"
   },
+  "bower":{
+    "directory":"app/bower_components"
+  },
   "scripts": {
     "postinstall": "bower install",
 
