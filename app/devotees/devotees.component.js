@@ -2,10 +2,27 @@ angular.module('devotees')
 	.component('devotees',{
 		templateUrl: 'devotees/devotees.template.html',
         controller: function PhoneListController($scope, $http){
-        	this.devotees ={} ;
+			$http({
+					  method:'JSONP',
+					  url:"https://jsonplaceholder.typicode.com/posts"
+				  }
 
-			$http.get("http://localhost:8080/devotee").then(function (success) {
-				$scope.devotess = success;
+			).then(
+				function (success) {
+					console.log(success);
+					$scope.devotess = success;},
+				function (error) {
+				$scope.devotess = [
+					{
+						"name":"manibhai"
+					},
+					{
+						"name":"nirdosh"
+					},
+					{
+						"name":"parmarth"
+					}
+				];
 			});
         }
 	});

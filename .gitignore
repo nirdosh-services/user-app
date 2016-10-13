@@ -9,3 +9,4 @@ bower_components/
 */bower_components/
 e2e-tests/
 /app/bower_components/
+/app/node_modules/
