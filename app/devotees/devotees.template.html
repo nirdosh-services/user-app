@@ -6,12 +6,14 @@
     </div>
     <div class="col-md-10">
         <!--Body content-->
-        <ul class="phones">
-            <li ng-repeat="devotee in $ctrl.devotees | filter: $ctrl.query">
+        test
+        <ul>
+            <li ng-repeat="devotee in $ctrl.devotees">
                 <span>
-                    <a href="#/devotee/{{devotee.id}}">{{devotee.name}}</a>
+                    <a href="#/devotee/{{devotee.contactInfo.basicInfo.name.firstName}}">
+                        {{devotee.contactInfo.basicInfo.name.firstName}}
+                    </a>
                 </span>
-                <p>{{devotee.snippet}}</p>
             </li>
         </ul>
     </div>
