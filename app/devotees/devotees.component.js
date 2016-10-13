@@ -2,6 +2,7 @@ angular.module('devotees')
 	.component('devotees',{
 		templateUrl: 'devotees/devotees.template.html',
         controller: function PhoneListController($scope, $http){
+			this.devotees = {};
 			$http.get(
 					  "http://localhost:8080/devotee"
 
@@ -9,9 +10,9 @@ angular.module('devotees')
 			).then(
 				function (success) {
 					console.log(success);
-					$scope.devotess = success;},
+					$scope.devotess = success.data;},
 				function (error) {
-				$scope.devotess = [
+				devotess = [
 					{
 						"name":"manibhai"
 					},
