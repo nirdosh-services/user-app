@@ -2,15 +2,11 @@ angular.module('devotees', ['ngRoute', 'ngResource'])
     .component('devotees', {
         templateUrl: 'devotees/devotees.template.html',
         controller: function DevoteesController($scope, $http) {
-            var self = this;
-            $http.get("http://devotee-service:8080/devotee")
-                .then(
-                    function (success) {
-                        self.devotees = success.data;
-                    },
-                    function (error) {
-                        console.log(error);
-                    });
+            $scope.users = [
+                {name:"nirdosh", lastName:"parmar", gender: "Male",birthDate:"25-12-2016"},
+                {name:"paresh", lastName:"parmar", gender: "Male",birthDate:"25-12-2016"},
+                {name:"test", lastName:"parmar", gender: "Male",birthDate:"25-12-2016"}
+            ]
         }
     })
     .component('devotee', {

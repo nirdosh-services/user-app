@@ -15,7 +15,7 @@
                 </div>
                 <div class="navbar-collapse collapse pull-right">
                     <ul class="nav navbar-nav">
-                        <li class="active"><button type="button"  onclick="location.href='home'" class="btn btn-default">Home</button></li>
+                        <li class="active"><button type="button"  onclick="location.href='#/manager'" class="btn btn-default">Home</button></li>
                         <li><div class="dropdown">
                             <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true">
                                 Devotees
@@ -48,7 +48,9 @@
                             <button class="btn btn-info" onclick="location.href='#/admin'">Admin</button>
                         </li>
                         <li>
-                            <button class="btn btn-default" onclick="location.href='#/login'">Logout</button>
+                            <form ng-submit="logout()">
+                                <button class="btn btn-default" type="submit">Logout</button>
+                            </form>
                         </li>
                     </ul>
                 </div>

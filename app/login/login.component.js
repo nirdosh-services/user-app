@@ -10,7 +10,7 @@ angular.module('login', ['ngRoute'])
                     authFactory.login($scope.name, $scope.password)
                         .then(
                             function (response) {
-                                $scope.token = response.data.token;
+                                $rootScope.token = response.data.token;
                                 $location.path("/manager");
                             },
                             function (error) {

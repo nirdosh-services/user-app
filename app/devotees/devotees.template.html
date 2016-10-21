@@ -1,20 +1,20 @@
-<div class="container-fluid">
-    <div class="row">
-        <div class="col-md-2">
-            Search : <input ng-model="$ctrl.query">
-        </div>
-    </div>
-    <div class="col-md-10">
-        <!--Body content-->
-        test
-        <ul>
-            <li ng-repeat="devotee in $ctrl.devotees">
-                <span>
-                    <a href="#/devotee/{{devotee.contactInfo.basicInfo.name.firstName}}">
-                        {{devotee.contactInfo.basicInfo.name.firstName}}
-                    </a>
-                </span>
-            </li>
-        </ul>
-    </div>
-</div>
+<table class="table table-bordered">
+    <thead>
+        <th>INDEX</th>
+        <th>NAME</th>
+        <th>LAST NAME</th>
+        <th>GENDER</th>
+        <th>BDAY</th>
+        <th></th>
+        <th></th>
+    </thead>
+    <tbody ng-repeat="user in users">
+        <td></td>
+        <td>{{user.name}}</td>
+        <td>{{user.lastName}}</td>
+        <td>{{user.gender}}</td>
+        <td>{{user.birthDate}}</td>
+        <td><button onclick="location.href='edit?devoteeId=${devotee.id}'" class="btn btn-success">Edit</button></td>
+        <td><button onclick="location.href='delete?devoteeId=${devotee.id}'" class="btn btn-danger">Delete</button></td>
+    </tbody>
+</table>
