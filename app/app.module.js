@@ -2,6 +2,7 @@ angular.module('devoteeApp',
     [
         'ngRoute',
         'devotees',
+        'login',
         'navBar',
         'manager'
     ]

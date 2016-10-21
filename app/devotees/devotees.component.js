@@ -3,7 +3,7 @@ angular.module('devotees', ['ngRoute', 'ngResource'])
         templateUrl: 'devotees/devotees.template.html',
         controller: function DevoteesController($scope, $http) {
             var self = this;
-            $http.get("http://localhost:8080/devotee")
+            $http.get("http://devotee-service:8080/devotee")
                 .then(
                     function (success) {
                         self.devotees = success.data;

@@ -13,6 +13,9 @@ angular.module('devoteeApp')
                 .when('/manager', {
                     template: '<manager></manager>'
                 })
-                .otherwise('/manager');
+                .when('/login',{
+                    template:'<login></login>'
+                })
+                .otherwise('/login');
         }
     ]);
