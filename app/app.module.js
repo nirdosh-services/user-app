@@ -1,11 +1,11 @@
 angular
     .module('userApp', ['ngRoute', 'angular-storage'])
     .factory('authProvider', function (store) {
-        return {
-            isLoggedIn : function () {
+        var authProvider = {};
+        authProvider.isLoggedIn = function () {
                 return store.get('token');
-            }
-        }
+            };
+        return authProvider;
     })
     .run(['$rootScope','$location','authProvider',
         function ($rootScope, $location, authProvider) {

@@ -22,15 +22,6 @@ angular.module('userApp')
                 }
             }
         })
-    .service('loginService', function ($http) {
-        return {
-            login: function (name, password) {
-                return $http.post(
-                    'http://localhost:8000/login',
-                    {name: name, password: password})
-            }
-        };
-    })
     .factory('authFactory',['$http', function($http){
         var urlBase = 'http://localhost:8000/login';
         var autFactory = {};
