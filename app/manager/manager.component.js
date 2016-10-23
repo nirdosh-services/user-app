@@ -1,5 +1,5 @@
 angular
-    .module('manager', [])
+    .module('userApp')
     .component(
         'manager',
         {

@@ -1,4 +1,4 @@
-angular.module('devotees', ['ngRoute', 'ngResource'])
+angular.module('userApp')
     .component('devotees', {
         templateUrl: 'devotees/devotees.template.html',
         controller: function DevoteesController($scope, $http) {

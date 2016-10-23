@@ -1,4 +1,4 @@
-angular.module('devoteeApp')
+angular.module('userApp')
     .config([
         '$locationProvider',
         '$routeProvider',
@@ -15,6 +15,15 @@ angular.module('devoteeApp')
                 })
                 .when('/login',{
                     template:'<login></login>'
+                })
+                .when('/flightInfo',{
+                    template: '<flightInfo></flightInfo>'
+                })
+                .when('/trainInfo',{
+                    template: '<trainInfo></trainInfo>'
+                })
+                .when('/ftpInfo',{
+                    template:'<ftpInfo></ftpInfo>'
                 })
                 .otherwise('/login');
         }

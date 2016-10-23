@@ -1,11 +1,17 @@
 angular
-    .module('navBar', [])
+    .module('userApp')
     .component('navBar', {
         templateUrl: 'nav-bar/nav-bar.template.html',
-        controller: function NavBarController($rootScope,$scope, $location){
-            $scope.logout = function(){
-                $rootScope.token = null;
+        controller: function NavBarController($rootScope, $scope, $location, store) {
+            $scope.logout = function () {
+                store.remove('token');
                 $location.path("/login");
+            };
+            $scope.isAuthenticated = function () {
+                return store.get('token')!== null;
+            };
+            $scope.flightInfo = function(){
+                $location.path('/flightInfo')
             }
         }
     });

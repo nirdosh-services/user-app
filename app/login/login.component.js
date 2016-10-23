@@ -1,20 +1,20 @@
-angular.module('login', ['ngRoute'])
+angular.module('userApp')
     .component(
         'login',
         {
             templateUrl: 'login/login.html',
-            controller: function LoginController(authFactory, $rootScope, $location, $http, $scope) {
+            controller: function LoginController(authFactory, $rootScope, $location, $http, $scope, store) {
                 $scope.token = {};
                 $scope.error = {};
                 $scope.login = function () {
                     authFactory.login($scope.name, $scope.password)
                         .then(
                             function (response) {
-                                $rootScope.token = response.data.token;
+                                store.set('token', response.data.token)
                                 $location.path("/manager");
                             },
                             function (error) {
-                                $scope.error = error;
+                                console.log(error);
                                 $location.path("/login");
                             }
                         )

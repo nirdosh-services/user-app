@@ -9,52 +9,48 @@
                             class="icon-bar"></span>
                     </button>
                     <a class="navbar-brand" href="/haridham-web"><h2>
-                        AYM 2015
+                        User Manager
                         <h2>
                     </a>
                 </div>
-                <div class="navbar-collapse collapse pull-right">
-                    <ul class="nav navbar-nav">
-                        <li class="active"><button type="button"  onclick="location.href='#/manager'" class="btn btn-default">Home</button></li>
-                        <li><div class="dropdown">
-                            <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true">
-                                Devotees
-                                <span class="caret"></span>
-                            </button>
-                            <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
-                                <li role="presentation"><a role="menuitem" tabindex="-1" href="#/devotees">All</a></li>
-                                <li role="presentation"><a role="menuitem" tabindex="-1" href="paymentInfo">Payment-Info</a></li>
-                                <li role="presentation"><a role="menuitem" tabindex="-1" href="ftpUserInfo">FTP-Info</a></li>
-                            </ul>
-                        </div></li>
-                        <li>
-                            <div class="dropdown">
+                <div ng-show="isAuthenticated()">
+                    <div class="navbar-collapse collapse pull-right">
+                        <ul class="nav navbar-nav">
+                            <li class="active"><button type="button"  onclick="location.href='#/manager'" class="btn btn-default">Home</button></li>
+                            <li><div class="dropdown">
                                 <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true">
-                                    Flights
+                                    Devotees
                                     <span class="caret"></span>
                                 </button>
                                 <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
-                                    <li role="presentation"><a role="menuitem" tabindex="-1" href="flightsFromGermany">From Germany</a></li>
-                                    <li role="presentation"><a role="menuitem" tabindex="-1" href="flightsFromIndia">From India</a></li>
-                                    <li role="presentation"><a role="menuitem" tabindex="-1" href="flightsFromGermany?isLive=true">From Germany (Live)</a></li>
-                                    <li role="presentation"><a role="menuitem" tabindex="-1" href="flightsFromIndia?isLive=true">From India (Live)</a></li>
+                                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#/devotees">All</a></li>
+                                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#/ftpInfo">FTP-Info</a></li>
                                 </ul>
-                            </div>
-                        </li>
-                        <li>
-                            <button type="button"  onclick="location.href='railInfo'" class="btn btn-default">Rail</button>
-                        </li>
-                        <li>
-                            <button class="btn btn-info" onclick="location.href='#/admin'">Admin</button>
-                        </li>
-                        <li>
-                            <form ng-submit="logout()">
-                                <button class="btn btn-default" type="submit">Logout</button>
-                            </form>
-                        </li>
-                    </ul>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="dropdown">
+                                    <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true">
+                                        Travel
+                                        <span class="caret"></span>
+                                    </button>
+                                    <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+                                        <li role="presentation"><a role="menuitem" tabindex="-1" href="#/flightInfo">Flight</a></li>
+                                        <li role="presentation"><a role="menuitem" tabindex="-1" href="#/trainInfo">Train</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li>
+                                <button class="btn btn-info" onclick="location.href='#/admin'">Admin</button>
+                            </li>
+                            <li>
+                                <form ng-submit="logout()">
+                                    <button class="btn btn-default" ng-click="logout()">Logout</button>
+                                </form>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
-
             </div>
         </div>
     </div>
