@@ -12,6 +12,7 @@
     "angular-resource": "1.5.x",
     "bootstrap": "3.3.x",
     "jquery-ui-bootstrap":"0.2.5",
-    "a0-angular-storage": "0.0.15"
+    "a0-angular-storage": "0.0.15",
+    "angular-jwt":"0.1.7"
   }
 }

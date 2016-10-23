@@ -2,11 +2,18 @@ angular.module('userApp')
     .component('devotees', {
         templateUrl: 'devotees/devotees.template.html',
         controller: function DevoteesController($scope, $http) {
-            $scope.users = [
-                {name:"nirdosh", lastName:"parmar", gender: "Male",birthDate:"25-12-2016"},
-                {name:"paresh", lastName:"parmar", gender: "Male",birthDate:"25-12-2016"},
-                {name:"test", lastName:"parmar", gender: "Male",birthDate:"25-12-2016"}
-            ]
+            $scope.users = {};
+            $scope.getUsers = function(){
+                $http.get('http://localhost:8000/api/user')
+                    .then(function (response) {
+                            console.log(response);
+                            $scope.users = response.data;
+                        },
+                        function (error) {
+                            console.log(error);
+                        });
+            }
+
         }
     })
     .component('devotee', {
