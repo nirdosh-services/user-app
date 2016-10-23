@@ -1,7 +1,7 @@
 angular.module('userApp')
     .component('devotees', {
         templateUrl: 'devotees/devotees.template.html',
-        controller: function DevoteesController($scope, $http) {
+        controller: function DevoteesController($scope, $http, store) {
             $scope.users = {};
             $scope.getUsers = function(){
                 $http.get('http://localhost:8000/api/user')

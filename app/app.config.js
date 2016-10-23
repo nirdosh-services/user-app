@@ -2,7 +2,9 @@ angular.module('userApp')
     .config([
         '$locationProvider',
         '$routeProvider',
-        function config($locationProvider, $routeProvider) {
+        'jwtOptionsProvider',
+        '$httpProvider',
+        function config($locationProvider, $routeProvider,jwtOptionsProvider, $httpProvider) {
             $routeProvider
                 .when('/devotees', {
                     template: '<devotees></devotees>'
@@ -13,18 +15,26 @@ angular.module('userApp')
                 .when('/manager', {
                     template: '<manager></manager>'
                 })
-                .when('/login',{
-                    template:'<login></login>'
+                .when('/login', {
+                    template: '<login></login>'
                 })
-                .when('/flightInfo',{
+                .when('/flightInfo', {
                     template: '<flightInfo></flightInfo>'
                 })
-                .when('/trainInfo',{
+                .when('/trainInfo', {
                     template: '<trainInfo></trainInfo>'
                 })
-                .when('/ftpInfo',{
-                    template:'<ftpInfo></ftpInfo>'
+                .when('/ftpInfo', {
+                    template: '<ftpInfo></ftpInfo>'
                 })
                 .otherwise('/login');
-        }
-    ]);
+
+            jwtOptionsProvider.config({
+                tokenGetter: ['store', function (store) {
+                    return store.get('token');
+                }],
+                whiteListedDomains: ['localhost']
+            });
+
+            $httpProvider.interceptors.push('jwtInterceptor');
+        }]);

@@ -27,7 +27,7 @@ angular.module('userApp')
         var autFactory = {};
 
         autFactory.login = function (name, password) {
-            return $http.post(urlBase,{name:name, password:password})
+            return $http.post(urlBase,{name:name, password:password}, {skipAuthorization: true})
         }
 
         return autFactory;
