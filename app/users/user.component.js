@@ -1,10 +1,10 @@
 angular.module('userApp')
-    .component('devotees', {
-        templateUrl: 'devotees/devotees.template.html',
+    .component('users', {
+        templateUrl: 'users/users.template.html',
         controller: function DevoteesController($scope, $http, store) {
             $scope.users = {};
             $scope.getUsers = function(){
-                $http.get('http://localhost:8000/api/user')
+                $http.get('http://138.68.83.101:8000/api/user')
                     .then(function (response) {
                             console.log(response);
                             $scope.users = response.data;
@@ -16,8 +16,8 @@ angular.module('userApp')
 
         }
     })
-    .component('devotee', {
-        templateUrl: 'devotees/devotee.template.html',
+    .component('user', {
+        templateUrl: 'users/user.template.html',
         controller: function DevoteeController($scope, $routeParams) {
             console.log($routeParams.id);
             var self = this;
