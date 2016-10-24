@@ -3,7 +3,12 @@ angular.module('userApp')
         'login',
         {
             templateUrl: 'login/login.html',
-            controller: function LoginController(authFactory, $rootScope, $location, $http, $scope, store) {
+            controller: function LoginController(authFactory,
+                                                 $rootScope,
+                                                 $location,
+                                                 $http,
+                                                 $scope,
+                                                 store) {
                 $scope.token = {};
                 $scope.error = {};
                 $scope.login = function () {
@@ -23,7 +28,7 @@ angular.module('userApp')
             }
         })
     .factory('authFactory',['$http', function($http){
-        var urlBase = 'http://localhost:8000/login';
+        var urlBase = 'http://138.68.83.101:8000/login';
         var autFactory = {};
 
         autFactory.login = function (name, password) {

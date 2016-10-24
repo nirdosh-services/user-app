@@ -7,10 +7,10 @@ angular.module('userApp')
         function config($locationProvider, $routeProvider,jwtOptionsProvider, $httpProvider) {
             $routeProvider
                 .when('/devotees', {
-                    template: '<devotees></devotees>'
+                    template: '<users></users>'
                 })
                 .when('/devotee/:id', {
-                    template: '<devotee></devotee>'
+                    template: '<user></user>'
                 })
                 .when('/manager', {
                     template: '<manager></manager>'
