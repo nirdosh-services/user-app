@@ -12,6 +12,9 @@ angular.module('userApp')
                 .when('/devotee/:id', {
                     template: '<user></user>'
                 })
+                .when('/editUser/:id',{
+                    template: '<edituser></edituser>'
+                })
                 .when('/manager', {
                     template: '<manager></manager>'
                 })

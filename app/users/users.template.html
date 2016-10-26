@@ -11,12 +11,12 @@
         <th></th>
     </thead>
     <tbody ng-repeat="user in users">
-        <td></td>
-        <td>{{user.name}}</td>
-        <td>{{user.lastName}}</td>
-        <td>{{user.gender}}</td>
-        <td>{{user.birthDate}}</td>
-        <td><button onclick="location.href='edit?devoteeId=${devotee.id}'" class="btn btn-success">Edit</button></td>
+        <td>{{$index+1}}</td>
+        <td>{{user.contactInfo.basicInfo.name.firstName}}</td>
+        <td>{{user.contactInfo.basicInfo.name.lastName}}</td>
+        <td>{{user.contactInfo.basicInfo.gender}}</td>
+        <td>{{user.contactInfo.basicInfo.birthDate}}</td>
+        <td><button ng-click="editUser(user.id)" class="btn btn-success">Edit</button></td>
         <td><button onclick="location.href='delete?devoteeId=${devotee.id}'" class="btn btn-danger">Delete</button></td>
     </tbody>
 </table>

@@ -1,10 +1,11 @@
 angular.module('userApp')
     .component('users', {
         templateUrl: 'users/users.template.html',
-        controller: function DevoteesController($scope, $http, store) {
+        controller: function DevoteesController($scope, $http, apiConfig, $location) {
             $scope.users = {};
+            var userEndpoint = apiConfig.domain + apiConfig.userEndpoint;
             $scope.getUsers = function(){
-                $http.get('http://138.68.83.101:8000/api/user')
+                $http.get(userEndpoint)
                     .then(function (response) {
                             console.log(response);
                             $scope.users = response.data;
@@ -12,6 +13,10 @@ angular.module('userApp')
                         function (error) {
                             console.log(error);
                         });
+            };
+
+            $scope.editUser = function (id) {
+                $location.path('/editUser/'+id)
             }
 
         }
@@ -27,5 +32,19 @@ angular.module('userApp')
                         self.devotees = success.data;
                     }
                 );
+        }
+    })
+    .component('edituser', {
+        templateUrl: 'users/user.edit.template.html',
+        controller: function EditUserController($scope){
+            $scope.tab = 1;
+
+            $scope.setTab = function (tabNo) {
+                $scope.tab = tabNo;
+
+            }
+            $scope.isSet = function(tabNum){
+                return $scope.tab === tabNum;
+            }
         }
     });

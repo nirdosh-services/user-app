@@ -27,12 +27,13 @@ angular.module('userApp')
                 }
             }
         })
-    .factory('authFactory',['$http', function($http){
-        var urlBase = 'http://138.68.83.101:8000/login';
+    .factory('authFactory',['$http','apiConfig', function($http,apiConfig){
+        var loginEndpoint = apiConfig.domain + apiConfig.loginEndpoint;
+        console.log(loginEndpoint);
         var autFactory = {};
 
         autFactory.login = function (name, password) {
-            return $http.post(urlBase,{name:name, password:password}, {skipAuthorization: true})
+            return $http.post(loginEndpoint,{name:name, password:password}, {skipAuthorization: true})
         }
 
         return autFactory;

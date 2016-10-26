@@ -7,6 +7,11 @@ angular
             };
         return authProvider;
     })
+    .constant('apiConfig',{
+        domain:'http://localhost:8000',
+        userEndpoint:'/api/user',
+        loginEndpoint:'/login'
+    })
     .run(
         function ($http, $rootScope, $location,store, authProvider) {
             $rootScope.$on('$routeChangeStart', function (event) {
