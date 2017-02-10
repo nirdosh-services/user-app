@@ -30,6 +30,9 @@ angular.module('userApp')
                 .when('/ftpInfo', {
                     template: '<ftpInfo></ftpInfo>'
                 })
+                .when('/admin', {
+                    template: '<admin></admin>'
+                })
                 .otherwise('/login');
 
             jwtOptionsProvider.config({
