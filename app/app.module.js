@@ -1,10 +1,14 @@
 angular
     .module('userApp', ['ngRoute', 'angular-storage','angular-jwt'])
-    .factory('authProvider', function (store) {
+    .factory('authProvider', function (store, jwtHelper) {
         var authProvider = {};
         authProvider.isLoggedIn = function () {
                 return store.get('token');
             };
+        authProvider.isUserAdmin = function(){
+            var token = jwtHelper.decodeToken(store.get('token'));
+            return token.roles.indexOf('ROLE_READER') !== -1 ;
+        }
         return authProvider;
     })
     .constant('apiConfig',{

@@ -2,7 +2,7 @@ angular
     .module('userApp')
     .component('navBar', {
         templateUrl: 'nav-bar/nav-bar.template.html',
-        controller: function NavBarController($rootScope, $scope, $location, store) {
+        controller: function NavBarController($rootScope, $scope, $location, store, authProvider) {
             $scope.logout = function () {
                 store.remove('token');
                 $location.path("/login");
@@ -12,6 +12,9 @@ angular
             };
             $scope.flightInfo = function(){
                 $location.path('/flightInfo')
+            }
+            $scope.isUserAdmin = function(){
+                return authProvider.isUserAdmin();
             }
         }
     });
