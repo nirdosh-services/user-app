@@ -16,7 +16,7 @@
                 <div ng-show="isAuthenticated()">
                     <div class="navbar-collapse collapse pull-right">
                         <ul class="nav navbar-nav">
-                            <li class="active"><button type="button"  onclick="location.href='#/manager'" class="btn btn-default">Home</button></li>
+                            <li ng-if= hasUserEditRights()><button type="button"  onclick="location.href='#/manager'" class="btn btn-default">Home</button></li>
                             <li><div class="dropdown">
                                 <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true">
                                     Users

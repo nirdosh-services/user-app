@@ -16,5 +16,8 @@ angular
             $scope.isUserAdmin = function(){
                 return authProvider.isUserAdmin();
             }
+            $scope.hasUserEditRights = function () {
+                return store.get('token').roles.indexOf('ROLE_EDIT')!= -1;
+            }
         }
     });
