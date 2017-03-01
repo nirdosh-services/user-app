@@ -4,7 +4,8 @@ angular
         'manager',
         {
             templateUrl: 'manager/manager.template.html',
-            controller: function ManagerController($scope){
+            controller: function managerController($scope){
+                $scope.user = {};
                 $scope.tab = 1;
 
                 $scope.setTab = function (tabNo) {
@@ -14,13 +15,16 @@ angular
                 $scope.isSet = function(tabNum){
                     return $scope.tab === tabNum;
                 }
+                $scope.saveUser = function(){
+                    console.log($scope.user);
+                }
             }
         }
     )
     .component('basicInfo',{
         templateUrl: 'manager/basic-info.html',
         controller: function basicInfoCtrl($scope) {
-
+            $scope.user = $scope.$parent.user;
         }
     })
     .component('transportInfo',{

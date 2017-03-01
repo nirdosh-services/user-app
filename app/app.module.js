@@ -8,7 +8,12 @@ angular
         authProvider.isUserAdmin = function(){
             var token = jwtHelper.decodeToken(store.get('token'));
             return token.roles.indexOf('ROLE_READER') !== -1 ;
-        }
+        };
+        authProvider.hasUserEditRights = function(){
+            var token = jwtHelper.decodeToken(store.get('token'));
+            return token.roles.indexOf('ROLE_EDIT') != -1;
+        };
+
         return authProvider;
     })
     .constant('apiConfig',{

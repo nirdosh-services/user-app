@@ -3,14 +3,15 @@
         <td>
             <div class="form-group">
                 <label for="firstName">First Name</label>
-                <input type="text" class="form-control" id="firstName" placeholder="first name">
+                <input type="text" class="form-control" id="firstName" placeholder="first name"
+                       ng-model="user.fname">
             </div>
         </td>
         <td>
             <div class="form-group">
                 <label for="firstNamePassport">First Name (Passport)</label>
                 <input type="text" class="form-control" id="firstNamePassport"
-                       placeholder="first name">
+                       placeholder="first name" ng-model="user.passname">
             </div>
         </td>
     </tr>
@@ -18,13 +19,15 @@
         <td>
             <div class="form-group">
                 <label for="lastName">Last Name</label>
-                <input type="text" class="form-control" id="lastName" placeholder="last name">
+                <input type="text" class="form-control" id="lastName" placeholder="last name"
+                       ng-model="user.lname">
             </div>
         </td>
         <td>
             <div class="form-group">
-                <label for="email">Last Name</label>
-                <input type="email" class="form-control" id="email" placeholder="email">
+                <label for="email">Email</label>
+                <input type="email" class="form-control" id="email" placeholder="email"
+                       ng-model="user.email">
             </div>
         </td>
     </tr>
@@ -32,27 +35,31 @@
         <td>
             <div class="form-group">
                 <label for="mobile">Mobile Number</label>
-                <input type="email" class="form-control" id="mobile" placeholder="mobile">
+                <input type="tel" class="form-control" id="mobile" placeholder="mobile"
+                       ng-model="user.tel.mobile">
             </div>
         </td>
         <td>
             <div class="form-group">
                 <label for="mobileIndia">Mobile Number(IN)</label>
-                <input type="email" class="form-control" id="mobileIndia" placeholder="mobile">
+                <input type="tel" class="form-control" id="mobileIndia" placeholder="mobile"
+                       ng-model="user.tel.mobile_india">
             </div>
         </td>
     </tr>
     <tr>
         <td>
             <div class="form-group">
-                <label for="birthdate">Mobile Number(IN)</label>
-                <input type="email" class="form-control" id="birthdate" placeholder="mobile">
+                <label for="birthdate">Birth Date</label>
+                <input type="date" class="form-control" id="birthdate" placeholder="birth date"
+                        ng-model="user.bdate">
             </div>
         </td>
         <td>
             <div class="form-group">
                 <label for="gender">Gender</label>
-                <input type="email" class="form-control" id="gender" placeholder="gender">
+                <input type="text" class="form-control" id="gender" placeholder="gender"
+                        ng-model="user.gender">
             </div>
         </td>
     </tr>
