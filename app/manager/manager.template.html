@@ -1,207 +1,32 @@
-    <ul class="nav nav-tabs">
-        <li ng-class="{ active : isSet(1) }">
-            <a ng-click="setTab(1)">Basic Information<i class="fa"></i></a>
-        </li>
-        <li ng-class="{ active: isSet(2) }">
-            <a ng-click="setTab(2)">Flight <i class="fa"></i></a>
-        </li>
-        <li ng-class="{ active: isSet(3) }">
-            <a ng-click="setTab(3)">Additional-Info <i class="fa"></i></a>
-        </li>
-    </ul>
-
-    <form method="post" action="addDevotee" commandName="devotee" role="form">
-
-        <div id="tabContent" class="tab-content">
-            <div ng-show="isSet(1)">
-                <table class="table table-bordered">
-                    <tbody>
-                    <tr>
-                        <td><label path="firstName">First Name: </label>
-                        <td><input path="firstName"/>
-                            <errors path="firstName"/>
-                        </td>
-
-                        <td><label path="firstNamePassport">First Name (Passport) </label>
-                        <td><input path="firstNamePassport"/>
-                            <errors path="firstNamePassport"/>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td><label path="lastName">Last Name</label>
-                        <td><input path="lastName"/>
-                            <errors path="lastName"/>
-                        </td>
-
-                        <td><label path="email">Email</label>
-                        <td><input path="email"/>
-                            <errors path="email"/>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td><label path="mobile">Mobile</label>
-                        <td><input path="mobile"/>
-                            <errors path="mobile"/>
-                        </td>
-
-                        <td><label path="mobileIndia">Mobile (IN) </label></td>
-                        <td><input path="mobileIndia"/>
-                            <errors path="mobileIndia"/>
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <td><label path="birthDate">
-                        </label>
-                        <td><input path="birthDate" id="birthdate"/>
-                            <errors path="birthDate"/>
-                        </td>
-
-                        <td><label path="gender">Gender</label>
-                        <td><select path="gender" items="${gender}"/>
-                            <errors path="gender"/>
-                        </td>
-
-                    </tr>
-                </table>
+<div>
+    <form ng-class="form-horizontal">
+        <div>
+            <ul class="nav nav-tabs">
+                <li class="{ active : isSet(1) }">
+                    <a ng-click="setTab(1)">Basic Information<i class="fa"></i></a>
+                </li>
+                <li ng-class="{ active: isSet(2) }">
+                    <a ng-click="setTab(2)">Transport <i class="fa"></i></a>
+                </li>
+                <li ng-class="{ active: isSet(3) }">
+                    <a ng-click="setTab(3)">Additional-Info <i class="fa"></i></a>
+                </li>
+            </ul>
+            <div id="tabContent" class="tab-content">
+                <div ng-show="isSet(1)">
+                    <basic-info></basic-info>
+                </div>
+                <div ng-show="isSet(2)">
+                    <transport-info></transport-info>
+                </div>
+                <div ng-show="isSet(3)">
+                    <additional-info></additional-info>
+                </div>
             </div>
-            <div ng-show="isSet(2)">
-                <fieldset>
-                    <legend>To India</legend>
-                    <table>
-                        <tr>
-                            <td><label path="flightInfo.departureLoc">Departure Location</label></td>
-                            <td><select path="flightInfo.departureLoc" items="${germanyAP}"/></td>
-                            <td>
-                                <errors path="flightInfo.departureLoc"/>
-                            </td>
-                            <td><label path="flightInfo.departureDate">DepartureDate</label></td>
-                            <td><input path="flightInfo.departureDate" id="departureDate"/></td>
-                            <td>
-                                <errors path="flightInfo.departureDate"/>
-                            </td>
-                            <td><label path="flightInfo.departingFlightNumber">Departing Flight Nr</label></td>
-                            <td><input path="flightInfo.departingFlightNumber"/></td>
-                            <td>
-                                <errors path="flightInfo.departingFlightNumber"/>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td><label path="flightInfo.arrivalLoc">Arrival Location</label></td>
-                            <td><select path="flightInfo.arrivalLoc" items="${indiaAP}"/></td>
-                            <td>
-                                <errors path="flightInfo.arrivalLoc"/>
-                            </td>
-                            <td><label path="flightInfo.arrivalDate">Arrival Date</label></td>
-                            <td><input path="flightInfo.arrivalDate" id="arrivalDate"/></td>
-                            <td>
-                                <errors path="flightInfo.arrivalDate"/>
-                            </td>
-                            <td><label path="flightInfo.arrivingFlightNumber">Arriving Flight Nr</label></td>
-                            <td><input path="flightInfo.arrivingFlightNumber"/></td>
-                            <td>
-                                <errors path="flightInfo.arrivingFlightNumber"/>
-                            </td>
-
-                        </tr>
-                    </table>
-                </fieldset>
-                <fieldset>
-                    <legend>From India</legend>
-                    <table>
-                        <tr>
-                            <td><label path="flightInfo.departureLocR">Departure Location</label></td>
-                            <td><select path="flightInfo.departureLocR" items="${indiaAP}"/></td>
-                            <td>
-                                <errors path="flightInfo.departureLocR"/>
-                            </td>
-                            <td><label path="flightInfo.departureDateR">DepartureDate</label></td>
-                            <td><input path="flightInfo.departureDateR" id="departureDateR"/></td>
-                            <td>
-                                <errors path="flightInfo.departureDateR"/>
-                            </td>
-                            <td><label path="flightInfo.departingFlightNumberR">Departing Flight Nr</label></td>
-                            <td><input path="flightInfo.departingFlightNumberR"/></td>
-                            <td>
-                                <errors path="flightInfo.departingFlightNumberR"/>
-                            </td>
-
-                        </tr>
-                        <tr>
-                            <td><label path="flightInfo.arrivalLocR">Arrival Location</label></td>
-                            <td><select path="flightInfo.arrivalLocR" items="${germanyAP}"/></td>
-                            <td>
-                                <errors path="flightInfo.arrivalLocR"/>
-                            </td>
-                            <td><label path="flightInfo.arrivalDateR">Arrival Date</label></td>
-                            <td><input path="flightInfo.arrivalDateR" id="arrivalDateR"/></td>
-                            <td>
-                                <errors path="flightInfo.arrivalDateR"/>
-                            </td>
-                            <td><label path="flightInfo.arrivingFlightNumberR">Arriving Flight Nr</label></td>
-                            <td><input path="flightInfo.arrivingFlightNumberR"/></td>
-                            <td>
-                                <errors path="flightInfo.arrivingFlightNumberR"/>
-                            </td>
-
-                        </tr>
-                    </table>
-                </fieldset>
-            </div>
-            <div ng-show="isSet(3)">
-                <fieldset>
-                    <table>
-                        <tr>
-                            <td>
-                                <label path="commingOnHisOwn">Is Comming on His Own?</label>
-                                <checkbox path="commingOnHisOwn"/>
-                                <errors path="commingOnHisOwn"/>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <label path="additionalInfo.registered">Is Registered?</label>
-                                <checkbox path="additionalInfo.registered"/>
-                                <errors path="additionalInfo.registered"/>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <label path="commingFirstTime">Comming First Time?</label>
-                                <checkbox path="commingFirstTime"/>
-                                <errors path="commingFirstTime"/>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <label path="trainInfo.arrivingStation">Train Station</label>
-                                <input path="trainInfo.arrivingStation"/>
-                                <errors path="trainInfo.arrivingStation"/>
-                            </td>
-                            <td><label path="trainInfo.arrivalTime">Arrival Date</label>
-                                <input path="trainInfo.arrivalTime" id="trainArrivalTime"/>
-                                <errors path="trainInfo.arrivalTime"/>
-                            </td>
-                            <td><label path="trainInfo.number">Train Nr:</label>
-                                <input path="trainInfo.number"/>
-                                <errors path="trainInfo.number"/>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <label path="additionalInfo.reference">Reference</label>
-                                <input path="additionalInfo.reference"/>
-                                <errors path="additionalInfo.reference"/>
-                            </td>
-                        </tr>
-                    </table>
-                </fieldset>
-            </div>
-        </div>
-
-        <div class="centered">
             <input type="submit" value="Add" class="btn btn-success">
+            <input type="button" value="home" onclick="location.href='#/manager'"
+                   class="btn btn-primary">
         </div>
     </form>
+</div>
 
-    <input type="button" value="home" onclick="location.href='#/manager'" class="btn btn-primary">

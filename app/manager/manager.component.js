@@ -16,4 +16,23 @@ angular
                 }
             }
         }
-    );
+    )
+    .component('basicInfo',{
+        templateUrl: 'manager/basic-info.html',
+        controller: function basicInfoCtrl($scope) {
+
+        }
+    })
+    .component('transportInfo',{
+        templateUrl: 'manager/transport-info.html',
+        controller: function basicInfoCtrl($scope) {
+
+        }
+    })
+    .component('additionalInfo',{
+        templateUrl: 'manager/additional-info.html',
+        controller: function basicInfoCtrl($scope) {
+
+        }
+    })
+;
