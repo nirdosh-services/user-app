@@ -12,10 +12,10 @@
     </thead>
     <tbody ng-repeat="user in users">
         <td>{{$index+1}}</td>
-        <td>{{user.contactInfo.basicInfo.name.firstName}}</td>
-        <td>{{user.contactInfo.basicInfo.name.lastName}}</td>
-        <td>{{user.contactInfo.basicInfo.gender}}</td>
-        <td>{{user.contactInfo.basicInfo.birthDate}}</td>
+        <td>{{user.contact.basicInfo.name.firstName}}</td>
+        <td>{{user.contact.basicInfo.name.lastName}}</td>
+        <td>{{user.contact.basicInfo.gender}}</td>
+        <td>{{user.contact.basicInfo.birthDate}}</td>
         <td><button ng-click="editUser(user.id)" class="btn btn-success">Edit</button></td>
         <td><button onclick="location.href='delete?devoteeId=${devotee.id}'" class="btn btn-danger">Delete</button></td>
     </tbody>

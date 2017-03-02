@@ -6,10 +6,10 @@ angular.module('userApp')
         '$httpProvider',
         function config($locationProvider, $routeProvider,jwtOptionsProvider, $httpProvider) {
             $routeProvider
-                .when('/devotees', {
+                .when('/users', {
                     template: '<users></users>'
                 })
-                .when('/devotee/:id', {
+                .when('/user/:id', {
                     template: '<user></user>'
                 })
                 .when('/editUser/:id',{

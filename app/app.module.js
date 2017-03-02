@@ -21,6 +21,19 @@ angular
         userEndpoint:'/api/user',
         loginEndpoint:'/login'
     })
+    .factory('userService', function ($http, apiConfig) {
+        var userService = {};
+        var userEndpoint = apiConfig.domain + apiConfig.userEndpoint;
+        userService.getUsers = function(){
+                return $http.get(userEndpoint);
+        };
+
+        userService.getUser = function(id) {
+            return $http.get(userEndpoint+"/"+id);
+        }
+
+        return userService;
+    })
     .run(
         function ($http, $rootScope, $location,store, authProvider) {
             $rootScope.$on('$routeChangeStart', function (event) {
