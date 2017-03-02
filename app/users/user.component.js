@@ -3,15 +3,15 @@ angular.module('userApp')
         templateUrl: 'users/users.template.html',
         controller: function DevoteesController($scope, $http, apiConfig, $location, userService) {
             $scope.users = {};
-            $scope.getUsers = function(){
-                userService.getUsers().then(function(response){
+            $scope.getUsers = function () {
+                userService.getUsers().then(function (response) {
                     $scope.users = response.data;
-                }, function(error){
+                }, function (error) {
                     console.log("error occured" + error);
                 });
             }
             $scope.editUser = function (id) {
-                $location.path('/editUser/'+id)
+                $location.path('/editUser/' + id)
             }
 
         }
@@ -31,7 +31,7 @@ angular.module('userApp')
     })
     .component('edituser', {
         templateUrl: 'users/user.edit.template.html',
-        controller: function EditUserController($scope, $routeParams, userService){
+        controller: function EditUserController($scope, $routeParams, userService) {
             $scope.tab = 1;
             $scope.user = {};
 
@@ -39,18 +39,65 @@ angular.module('userApp')
                 $scope.tab = tabNo;
 
             };
-            $scope.isSet = function(tabNum){
+            $scope.isSet = function (tabNum) {
                 return $scope.tab === tabNum;
             };
 
             userService.getUser($routeParams.id).then(
-                function(response){
+                function (response) {
                     console.log(response.data);
                     $scope.user = response.data;
                 },
-                function(error){
+                function (error) {
                     console.log("error while getting user");
                 }
             );
+        }
+    })
+    .component('telInfo', {
+        templateUrl: 'users/tel-info.html',
+        controller: function telInfoCtrl($scope) {
+
+        }
+    })
+    .component('addrInfo', {
+        templateUrl: 'users/addr-info.html',
+        controller: function adrInfoCtrl($scope) {
+
+        }
+    })
+    .component('flightInfo', {
+        templateUrl: 'users/flight-info.html',
+        controller: function flightInfoCtrl($scope) {
+
+        }
+    })
+    .component('addInfo', {
+        templateUrl: 'users/add-info.html',
+        controller: function addInfoCtrl($scope) {
+
+        }
+    })
+    .component('paymentInfo', {
+        templateUrl: 'users/payment-info.html',
+        controller: function paymentInfoCtrl($scope) {
+
+        }
+    })
+    .component('outboundFlight', {
+        templateUrl: 'users/outbound-flight.html',
+        controller: function outboundFlightCtrl($scope) {
+
+        }
+    })
+    .component('returnFlight', {
+        templateUrl: 'users/return-flight.html',
+        controller: function returnFlightCtrl($scope) {
+        }
+    })
+    .component('ftpInfo', {
+        templateUrl: 'users/ftp-info.html',
+        controller: function ftpInfoCtrl($scope) {
+
         }
     });

@@ -1,0 +1,49 @@
+<table>
+    <tr>
+        <td>
+            <div class="form-group">
+                <label for="deptLoc">From</label>
+                <input type="text" class="form-control" id="deptLoc" placeholder="dept loc"
+                       ng-model="user.itinerary.outboundFlights[0].from">
+            </div>
+        </td>
+        <td>
+            <div class="form-group">
+                <label for="deptDate">Dept. Date</label>
+                <input type="text" class="form-control" id="deptDate" placeholder="dept date"
+                       ng-model="user.itinerary.outboundFlights[0].departureDate">
+            </div>
+        </td>
+        <td>
+            <div class="form-group">
+                <label for="flightNr">Flight Nr</label>
+                <input type="text" class="form-control" id="flightNr" placeholder="flight nr"
+                       ng-model="user.itinerary.outboundFlights[0].flightNumber">
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <div class="form-group">
+                <label for="to">To</label>
+                <input type="text" class="form-control" id="to" placeholder="to"
+                       ng-model="user.itinerary.outboundFlights[1].to">
+            </div>
+        </td>
+        <td>
+            <div class="form-group">
+                <label for="arrDate">Arr. Date</label>
+                <input type="text" class="form-control" id="arrDate" placeholder="arr date"
+                       ng-model="user.itinerary.outboundFlights[1].arrivalDate">
+            </div>
+        </td>
+        <td>
+            <div class="form-group">
+                <label for="flightNrArv">Flight Nr</label>
+                <input type="text" class="form-control" id="flightNrArv"
+                       placeholder="flight nr"
+                       ng-model="user.itinerary.outboundFlights[1].flightNumber">
+            </div>
+        </td>
+    </tr>
+</table>

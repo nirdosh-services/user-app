@@ -1,0 +1,96 @@
+<fieldset>
+    <legend>HOME</legend>
+    <table class="table">
+        <tr>
+            <td>
+                <div class="form-group">
+                    <label for="strName">Street Name</label>
+                    <input type="text" class="form-control" id="strname" placeholder="street name"
+                           ng-model="user.contact.addresses[0].streetName">
+                </div>
+            </td>
+            <td>
+                <div class="form-group">
+                    <label for="houseNr">House Number</label>
+                    <input type="text" class="form-control" id="houseNr" placeholder="house nr"
+                           ng-model="user.contact.addresses[0].houseNumber">
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div class="form-group">
+                    <label for="plz">PLZ</label>
+                    <input type="text" class="form-control" id="plz" placeholder="plz"
+                           ng-model="user.contact.addresses[0].plz">
+                </div>
+            </td>
+            <td>
+                <div class="form-group">
+                    <label for="state">State</label>
+                    <input type="text" class="form-control" id="state" placeholder="state"
+                           ng-model="user.contact.addresses[0].state">
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div class="form-group">
+                    <label for="country">Country</label>
+                    <input type="text" class="form-control" id="country" placeholder="country"
+                           ng-model="user.contact.addresses[0].country">
+                </div>
+            </td>
+            <td></td>
+        </tr>
+    </table>
+</fieldset>
+<fieldset>
+    <legend>OFFICE</legend>
+    <table class="table">
+        <tr>
+            <td>
+                <div class="form-group">
+                    <label for="strNameOff">Street Name</label>
+                    <input type="text" class="form-control" id="strnameOff"
+                           placeholder="street name"
+                           ng-model="user.contact.addresses[1].streetName">
+                </div>
+            </td>
+            <td>
+                <div class="form-group">
+                    <label for="houseNrOff">House Number</label>
+                    <input type="text" class="form-control" id="houseNrOff" placeholder="house nr"
+                           ng-model="user.contact.addresses[1].houseNumber">
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div class="form-group">
+                    <label for="plzOff">PLZ</label>
+                    <input type="text" class="form-control" id="plzOff" placeholder="plz"
+                           ng-model="user.contact.addresses[1].plz">
+                </div>
+            </td>
+            <td>
+                <div class="form-group">
+                    <label for="stateOff">State</label>
+                    <input type="text" class="form-control" id="stateOff" placeholder="state"
+                           ng-model="user.contact.addresses[1].state">
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div class="form-group">
+                    <label for="countryOff">Country</label>
+                    <input type="text" class="form-control" id="countryOff" placeholder="country"
+                           ng-model="user.contact.addresses[1].country">
+                </div>
+            </td>
+            <td></td>
+        </tr>
+
+    </table>
+</fieldset>

@@ -1,0 +1,78 @@
+<fieldset>
+    <table>
+        <tr>
+            <td>
+                <label path="commingOnHisOwn">Is Comming on His Own?</label>
+                <checkbox path="commingOnHisOwn"/>
+                <errors path="commingOnHisOwn"/>
+            </td>
+            <td>
+                <label path="additionalInfo.registered">Is Registered?</label>
+                <checkbox path="additionalInfo.registered"/>
+                <errors path="additionalInfo.registered"/>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label path="commingFirstTime">Comming First Time?</label>
+                <checkbox path="commingFirstTime"/>
+                <errors path="commingFirstTime"/>
+            </td>
+            <td>
+                <label path="trainInfo.arrivingStation">Train Station</label>
+                <input path="trainInfo.arrivingStation"/>
+                <errors path="trainInfo.arrivingStation"/>
+            </td>
+            <td><label path="trainInfo.arrivalTime">Arrival Date</label>
+                <input path="trainInfo.arrivalTime" id="trainArrivalTime"/>
+                <errors path="trainInfo.arrivalTime"/>
+            </td>
+            <td><label path="trainInfo.number">Train Nr:</label>
+                <input path="trainInfo.number"/>
+                <errors path="trainInfo.number"/>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label path="additionalInfo.reference">Reference</label>
+                <input path="additionalInfo.reference"/>
+                <errors path="additionalInfo.reference"/>
+            </td>
+            <td>
+                <label path="additionalInfo.isComingToPilgrimage">Is Coming to
+                    Pilgrimage:</label>
+                <select path="additionalInfo.isComingToPilgrimage" items="${selection}"/>
+                <errors path="additionalInfo.isComingToPilgrimage"/>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label path="additionalInfo.commingToAYM">Coming To AYM:</label>
+                <select path="additionalInfo.commingToAYM" items="${selection}"/>
+                <errors path="additionalInfo.commingToAYM"/>
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <label path="additionalInfo.team">Team:</label>
+                <input path="additionalInfo.team"/>
+                <errors path="additionalInfo.team"/>
+            </td>
+            <td>
+                <label path="additionalInfo.roomEnum">Room:</label>
+                <select path="additionalInfo.roomEnum" items="${roomEnum}"/>
+                <errors path="additionalInfo.roomEnum"/>
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <label path="additionalInfo.responsibleForRoom">Is Responsible For
+                    Room:</label>
+                <checkbox path="additionalInfo.responsibleForRoom"/>
+                <errors path="additionalInfo.responsibleForRoom"/>
+            </td>
+        </tr>
+    </table>
+</fieldset>
