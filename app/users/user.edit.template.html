@@ -1,9 +1,12 @@
-<h2>Edit Devotee</h2>
+<h2>Edit </h2>
 <h4>{{user.name.firstName }} {{user.name.lastName}} </h4>
 <form >
 <ul class="nav nav-tabs">
     <li ng-class="{ active : isSet(1) }">
         <a ng-click="setTab(1)">Basic Information<i class="fa"></i></a>
+    </li>
+    <li ng-class="{ active : isSet(8) }">
+        <a ng-click="setTab(8)">Contact<i class="fa"></i></a>
     </li>
     <li ng-class="{ active: isSet(2) }">
         <a ng-click="setTab(2)">Telephones <i class="fa"></i></a>
@@ -28,6 +31,9 @@
 <div id="tabContent" class="tab-content">
     <div ng-show="isSet(1)">
         <basic-info></basic-info>
+    </div>
+    <div ng-show="isSet(8)">
+        <contact-info></contact-info>
     </div>
     <div ng-show="isSet(2)">
         <tel-info></tel-info>

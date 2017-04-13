@@ -21,8 +21,8 @@ angular
             }
         }
     )
-    .component('basicInfo',{
-        templateUrl: 'manager/basic-info.html',
+    .component('basicInfoMgr',{
+        templateUrl: 'manager/basic-info-mgr.html',
         controller: function basicInfoCtrl($scope) {
             $scope.user = $scope.$parent.user;
         }

@@ -24,6 +24,7 @@ angular
     .factory('userService', function ($http, apiConfig) {
         var userService = {};
         var userEndpoint = apiConfig.domain + apiConfig.userEndpoint;
+        var user = {};
         userService.getUsers = function(){
                 return $http.get(userEndpoint);
         };
@@ -32,6 +33,13 @@ angular
             return $http.get(userEndpoint+"/"+id);
         }
 
+        userService.setCurrentUser= function(user){
+            this.user = user;
+        };
+
+        userService.getCurrentUser= function(){
+            return this.user;
+        }
         return userService;
     })
     .run(

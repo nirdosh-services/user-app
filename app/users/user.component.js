@@ -3,13 +3,17 @@ angular.module('userApp')
         templateUrl: 'users/users.template.html',
         controller: function DevoteesController($scope, $http, apiConfig, $location, userService) {
             $scope.users = {};
-            $scope.getUsers = function () {
-                userService.getUsers().then(function (response) {
-                    $scope.users = response.data;
-                }, function (error) {
-                    console.log("error occured" + error);
-                });
-            }
+            var userEndpoint = apiConfig.domain + apiConfig.userEndpoint;
+            $scope.getUsers = function(){
+                $http.get(userEndpoint)
+                    .then(function (response) {
+                              console.log(response);
+                              $scope.users = response.data;
+                          },
+                          function (error) {
+                              console.log(error);
+                          });
+            };
             $scope.editUser = function (id) {
                 $location.path('/editUser/' + id)
             }
@@ -37,6 +41,7 @@ angular.module('userApp')
 
             $scope.setTab = function (tabNo) {
                 $scope.tab = tabNo;
+                console.log("tab"+ $scope.user);
 
             };
             $scope.isSet = function (tabNum) {
@@ -47,6 +52,7 @@ angular.module('userApp')
                 function (response) {
                     console.log(response.data);
                     $scope.user = response.data;
+                    userService.setCurrentUser($scope.user);
                 },
                 function (error) {
                     console.log("error while getting user");
@@ -100,4 +106,14 @@ angular.module('userApp')
         controller: function ftpInfoCtrl($scope) {
 
         }
-    });
+    }).component('contactInfo', {
+        templateUrl: 'users/contact-info.html',
+        controller: function contactInfoCtrl($scope) {
+
+        }
+    }).component('basicInfo', {
+        templateUrl: 'users/basic-info.html',
+        controller: function basicInfoCtrl($scope, userService) {
+            console.log("test");
+            console.log("user" + userService.getCurrentUser());
+        }});
